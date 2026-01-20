@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluTech | Premium Anodized Aluminium Products</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="AluTech Logo" height="40" class="d-inline-block align-top">
+                <span class="brand-name">Alu<span class="tech">Tech</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#specifications">Specifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#applications">Applications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="colorDropdown" role="button" data-bs-toggle="dropdown">
+                            Color Library
+                        </a>
+                        <div class="dropdown-menu color-library">
+                            <div class="color-grid">
+                                <div class="color-item" style="background-color: #2c3e50;" data-color="Matte Black"></div>
+                                <div class="color-item" style="background-color: #7f8c8d;" data-color="Silver Metallic"></div>
+                                <div class="color-item" style="background-color: #e74c3c;" data-color="Crimson Red"></div>
+                                <div class="color-item" style="background-color: #3498db;" data-color="Ocean Blue"></div>
+                                <div class="color-item" style="background-color: #2ecc71;" data-color="Emerald Green"></div>
+                                <div class="color-item" style="background-color: #f39c12;" data-color="Golden Bronze"></div>
+                                <div class="color-item" style="background-color: #9b59b6;" data-color="Royal Purple"></div>
+                                <div class="color-item" style="background-color: #1abc9c;" data-color="Turquoise"></div>
+                                <div class="color-item" style="background-color: #34495e;" data-color="Graphite"></div>
+                                <div class="color-item" style="background-color: #d35400;" data-color="Copper"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Cart & User Actions -->
+                <div class="d-flex ms-3">
+                    <button class="btn btn-outline-primary me-2" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count badge bg-danger">0</span>
+                    </button>
+                    <button class="btn btn-primary" id="quoteBtn" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                        <i class="fas fa-file-invoice-dollar"></i> Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Premium <span class="highlight">Anodized Aluminium</span> Solutions</h1>
+                        <p class="hero-subtitle">High-quality strips, coils, and sheets for industrial and architectural applications</p>
+                        
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Corrosion Resistant</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-palette"></i>
+                                <span>Custom Colors</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-industry"></i>
+                                <span>ISO 9001 Certified</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons mt-4">
+                            <a href="#products" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-box-open"></i> View Products
+                            </a>
+                            <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#sampleModal">
+                                <i class="fas fa-vial"></i> Request Sample
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="images/aluminium-coil.jpg" alt="Anodized Aluminium Coil" class="img-fluid rounded shadow-lg">
+                        <div class="floating-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Quality Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Stats -->
+    <section class="stats-section py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stat-item">
+                        <i class="fas fa-building"></i>
+                        <h3 class="stat-number" data-count="250">0</h3>
+                        <p class="stat-label">Clients Served</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stat-item">
+                        <i class="fas fa-boxes"></i>
+                        <h3 class="stat-number" data-count="5000">0</h3>
+                        <p class="stat-label">Products Delivered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stat-item">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3 class="stat-number" data-count="15">0</h3>
+                        <p class="stat-label">Countries</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stat-item">
+                        <i class="fas fa-industry"></i>
+                        <h3 class="stat-number" data-count="98">0</h3>
+                        <p class="stat-label">Quality Score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">Premium quality anodized aluminium products for various applications</p>
+                <div class="product-filters mt-4">
+                    <button class="btn btn-outline-primary active" data-filter="all">All Products</button>
+                    <button class="btn btn-outline-primary" data-filter="strip">Strips</button>
+                    <button class="btn btn-outline-primary" data-filter="coil">Coils</button>
+                    <button class="btn btn-outline-primary" data-filter="sheet">Sheets</button>
+                    <button class="btn btn-outline-primary" data-filter="custom">Custom</button>
+                </div>
+            </div>
+
+            <div class="row" id="productGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="images/factory.jpg" alt="Our Factory" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="section-title">About AluTech</h2>
+                        <p class="lead">Leading manufacturer of premium anodized aluminium products since 2005.</p>
+                        
+                        <div class="about-features mt-4">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>ISO 9001:2015 Certified Manufacturing</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>State-of-the-art Anodizing Facility</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>Environmental Friendly Processes</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>Just-in-Time Delivery System</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <div class="progress mb-3">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    Customer Satisfaction: 95%
+                                </div>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                                    On-time Delivery: 98%
+                                </div>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
+                                    Quality Assurance: 99%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2 class="section-title">Contact Us</h2>
+                        <p class="lead">Get in touch for quotes, samples, or technical support</p>
+                        
+                        <div class="contact-details mt-4">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h6>Address</h6>
+                                    <p>123 Industrial Estate, Hyderabad, Telangana 500072</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h6>Phone</h6>
+                                    <p>+91 9390898773</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h6>Email</h6>
+                                    <p>info@alutech.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h6>Business Hours</h6>
+                                    <p>Mon-Sat: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Send Inquiry</h5>
+                                <form id="inquiryForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Name *</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Company</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Email *</label>
+                                            <input type="email" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Phone *</label>
+                                            <input type="tel" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Product Interest</label>
+                                        <select class="form-select">
+                                            <option>Aluminium Strips</option>
+                                            <option>Aluminium Coils</option>
+                                            <option>Aluminium Sheets</option>
+                                            <option>Custom Fabrication</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Message *</label>
+                                        <textarea class="form-control" rows="4" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="fas fa-paper-plane"></i> Send Inquiry
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">AluTech</h5>
+                    <p>Leading manufacturer of premium anodized aluminium products with 15+ years of industry experience.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#specifications">Specifications</a></li>
+                        <li><a href="#applications">Applications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6>Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Anodized Strips</a></li>
+                        <li><a href="#">Coloured Coils</a></li>
+                        <li><a href="#">Embossed Sheets</a></li>
+                        <li><a href="#">Custom Fabrication</a></li>
+                        <li><a href="#">Quality Testing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Subscribe Newsletter</h6>
+                    <p>Get updates on new products and special offers</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 AluTech. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white me-3">Terms of Service</a>
+                    <a href="admin.html" class="text-white">Admin Panel</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="quoteForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Product Type</label>
+                                <select class="form-select">
+                                    <option>Aluminium Strip</option>
+                                    <option>Aluminium Coil</option>
+                                    <option>Aluminium Sheet</option>
+                                    <option>Custom Fabrication</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-control" placeholder="e.g., 100" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Width (mm)</label>
+                                <input type="number" class="form-control" placeholder="e.g., 1000">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Thickness (mm)</label>
+                                <input type="number" class="form-control" placeholder="e.g., 2" step="0.1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Modal -->
+    <div class="modal fade" id="sampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request Sample</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="sampleForm">
+                        <div class="mb-3">
+                            <label class="form-label">Product Type</label>
+                            <select class="form-select" id="sampleProduct">
+                                <option>Aluminium Strip</option>
+                                <option>Aluminium Coil</option>
+                                <option>Aluminium Sheet</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Sample Size</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sampleSize" value="small" checked>
+                                <label class="form-check-label">Small (A4 Size)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sampleSize" value="medium">
+                                <label class="form-check-label">Medium (A3 Size)</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Color Preference</label>
+                            <input type="color" class="form-control form-control-color" value="#2c3e50">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Request Sample</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div class="cart-total text-end mt-3">
+                        <h5>Total: $<span id="cartTotal">0.00</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

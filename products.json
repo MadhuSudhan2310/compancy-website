@@ -1,0 +1,118 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Anodized Aluminium Strip",
+      "category": "strip",
+      "price": 25.99,
+      "unit": "/meter",
+      "image": "images/Anodized Aluminium Strip.jpeg",
+      "description": "High-quality anodized aluminium strips for various industrial applications",
+      "features": ["Corrosion resistant", "Custom lengths", "Multiple colors", "ISO certified"],
+      "specifications": {
+        "thickness": "0.5-3mm",
+        "width": "10-500mm",
+        "length": "Custom",
+        "alloy": "AA1100, AA3003",
+        "surface": "Matte, Glossy",
+        "color": "Silver, Black, Bronze"
+      },
+      "stock": 150
+    },
+    {
+      "id": 2,
+      "name": "Coloured Aluminium Coil",
+      "category": "coil",
+      "price": 18.50,
+      "unit": "/kg",
+      "image": "images/aluminium-coil.jpg",
+      "description": "Pre-coloured aluminium coils with excellent surface finish",
+      "features": ["UV resistant", "Weather proof", "Easy fabrication", "Consistent quality"],
+      "specifications": {
+        "thickness": "0.2-2mm",
+        "width": "300-1500mm",
+        "length": "100-1000m",
+        "alloy": "AA3003, AA5052",
+        "surface": "PVDF coated",
+        "color": "Multiple colors available"
+      },
+      "stock": 200
+    },
+    {
+      "id": 3,
+      "name": "Mirror Finish Strip",
+      "category": "strip",
+      "price": 42.99,
+      "unit": "/meter",
+      "image": "images/Mirror Finish Strip.jpeg",
+      "description": "Premium mirror finish aluminium strips for decorative applications",
+      "features": ["High reflectivity", "Luxury finish", "Easy to clean", "Scratch resistant"],
+      "specifications": {
+        "thickness": "0.3-1.5mm",
+        "width": "20-300mm",
+        "length": "Custom",
+        "alloy": "AA1100",
+        "surface": "Mirror Finish",
+        "color": "Silver"
+      },
+      "stock": 75
+    },
+    {
+      "id": 4,
+      "name": "Industrial Grade Coil",
+      "category": "coil",
+      "price": 15.25,
+      "unit": "/kg",
+      "image": "images/Industrial Grade Coil.jpeg",
+      "description": "Heavy-duty aluminium coils for industrial applications",
+      "features": ["High strength", "Cost effective", "Durable", "Industrial grade"],
+      "specifications": {
+        "thickness": "1-5mm",
+        "width": "500-2000mm",
+        "length": "50-500m",
+        "alloy": "AA3003, AA5052",
+        "surface": "Natural",
+        "color": "Natural Aluminium"
+      },
+      "stock": 300
+    },
+    {
+      "id": 5,
+      "name": "Custom Fabricated Sheet",
+      "category": "sheet",
+      "price": 55.00,
+      "unit": "/piece",
+      "image": "images/Custom Fabricated Sheet.jpeg",
+      "description": "Custom fabricated aluminium sheets to your specifications",
+      "features": ["Custom sizes", "Precision cut", "Various thickness", "Tailored solutions"],
+      "specifications": {
+        "thickness": "0.1-10mm",
+        "width": "Custom",
+        "length": "Custom",
+        "alloy": "Various",
+        "surface": "Custom",
+        "color": "Custom"
+      },
+      "stock": 50
+    },
+    {
+      "id": 6,
+      "name": "Embossed Aluminium Sheet",
+      "category": "sheet",
+      "price": 35.75,
+      "unit": "/sheet",
+      "image": "images/hero-bg.jpg",
+      "description": "Decorative embossed aluminium sheets for architectural applications",
+      "features": ["Patterned surface", "Scratch resistant", "Easy cleaning", "Aesthetic finish"],
+      "specifications": {
+        "thickness": "0.8-4mm",
+        "width": "1000-2000mm",
+        "length": "2000-4000mm",
+        "alloy": "AA3003",
+        "surface": "Embossed",
+        "color": "Custom"
+      },
+      "stock": 120
+    }
+  ]
+}

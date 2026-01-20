@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluTech Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar { 
+            background: linear-gradient(135deg, #2c3e50, #1a252f); 
+            color: white;
+            min-height: 100vh;
+            box-shadow: 3px 0 10px rgba(0,0,0,0.1);
+        }
+        .sidebar a { 
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover { 
+            color: #3498db;
+            background: rgba(255,255,255,0.1);
+            padding-left: 15px;
+        }
+        .main-content { 
+            padding: 20px; 
+        }
+        .stat-card { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 25px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .stat-card .icon {
+            font-size: 2.5rem;
+            opacity: 0.8;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        table th {
+            background-color: #f8f9fa;
+            border-top: none;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 15px;
+        }
+        table td {
+            padding: 15px;
+            vertical-align: middle;
+            border-top: 1px solid #eee;
+        }
+        .badge {
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+        .nav-link.active {
+            background: rgba(52, 152, 219, 0.2);
+            border-left: 4px solid #3498db;
+        }
+        .logo {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .chart-container {
+            height: 300px;
+            padding: 15px;
+        }
+        .btn-admin {
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+        }
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+        }
+        .product-img-thumb {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 sidebar p-0">
+                <div class="logo">
+                    <img src="logo.png" alt="AluTech Logo">
+                    <h5 class="mt-2 text-white">Admin Panel</h5>
+                </div>
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#dashboard" class="nav-link py-3 px-4">
+                                <i class="fas fa-tachometer-alt me-3"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#products" class="nav-link py-3 px-4">
+                                <i class="fas fa-box me-3"></i> Products
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#orders" class="nav-link py-3 px-4">
+                                <i class="fas fa-shopping-cart me-3"></i> Orders
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#inquiries" class="nav-link py-3 px-4">
+                                <i class="fas fa-envelope me-3"></i> Inquiries
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#analytics" class="nav-link py-3 px-4">
+                                <i class="fas fa-chart-bar me-3"></i> Analytics
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mt-4">
+                            <a href="../index.html" class="nav-link py-3 px-4">
+                                <i class="fas fa-globe me-3"></i> View Website
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <!-- Main Content -->
+            <main class="col-md-10 main-content">
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Total Orders</h6>
+                                    <h3 id="totalOrders" class="mb-0">0</h3>
+                                </div>
+                                <div class="icon text-primary">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Revenue</h6>
+                                    <h3 id="totalRevenue" class="mb-0">$0</h3>
+                                </div>
+                                <div class="icon text-success">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Inquiries</h6>
+                                    <h3 id="totalInquiries" class="mb-0">0</h3>
+                                </div>
+                                <div class="icon text-warning">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Products</h6>
+                                    <h3 id="totalProducts" class="mb-0">0</h3>
+                                </div>
+                                <div class="icon text-info">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Management -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Product Management</h5>
+                        <button class="btn btn-primary btn-admin" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                            <i class="fas fa-plus me-2"></i> Add New Product
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="productsTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <!-- Products will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Inquiries -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Recent Inquiries</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="inquiriesTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Product</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inquiriesTableBody">
+                                    <!-- Inquiries will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProductForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Product Name *</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category *</label>
+                                <select class="form-select" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="strip">Strip</option>
+                                    <option value="coil">Coil</option>
+                                    <option value="sheet">Sheet</option>
+                                    <option value="custom">Custom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Price ($) *</label>
+                                <input type="number" class="form-control" name="price" step="0.01" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Unit *</label>
+                                <input type="text" class="form-control" name="unit" value="/meter" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Stock Quantity *</label>
+                                <input type="number" class="form-control" name="stock" value="100" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description *</label>
+                            <textarea class="form-control" name="description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Features (comma separated)</label>
+                            <input type="text" class="form-control" name="features" placeholder="Feature 1, Feature 2, Feature 3">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Product Image URL *</label>
+                            <input type="url" class="form-control" name="image" 
+                                   placeholder="https://example.com/image.jpg" 
+                                   value="images/default-product.jpg" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-admin w-100">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- View Inquiry Modal -->
+    <div class="modal fade" id="viewInquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inquiry Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="inquiryDetails">
+                    <!-- Inquiry details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
