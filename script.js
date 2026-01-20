@@ -6,7 +6,7 @@ const products = [
         category: "strip",
         price: 25.99,
         unit: "/meter",
-        image: "images/Anodized Aluminium Strip.jpeg",
+        image: "Anodized Aluminium Strip.jpeg",
         description: "High-quality anodized aluminium strips for various industrial applications",
         features: ["Corrosion resistant", "Custom lengths", "Multiple colors", "ISO certified"]
     },
@@ -16,7 +16,7 @@ const products = [
         category: "coil",
         price: 18.50,
         unit: "/kg",
-        image: "images/aluminium-coil.jpg",
+        image: "aluminium-coil.jpg",
         description: "Pre-coloured aluminium coils with excellent surface finish",
         features: ["UV resistant", "Weather proof", "Easy fabrication", "Consistent quality"]
     },
@@ -26,7 +26,7 @@ const products = [
         category: "strip",
         price: 42.99,
         unit: "/meter",
-        image: "images/Mirror Finish Strip.jpeg",
+        image: "Mirror Finish Strip.jpeg",
         description: "Premium mirror finish aluminium strips for decorative applications",
         features: ["High reflectivity", "Luxury finish", "Easy to clean", "Scratch resistant"]
     },
@@ -36,7 +36,7 @@ const products = [
         category: "coil",
         price: 15.25,
         unit: "/kg",
-        image: "images/Industrial Grade Coil.jpeg",
+        image: "Industrial Grade Coil.jpeg",
         description: "Heavy-duty aluminium coils for industrial applications",
         features: ["High strength", "Cost effective", "Durable", "Industrial grade"]
     },
@@ -46,7 +46,7 @@ const products = [
         category: "sheet",
         price: 55.00,
         unit: "/piece",
-        image: "images/Custom Fabricated Sheet.jpeg",
+        image: "Custom Fabricated Sheet.jpeg",
         description: "Custom fabricated aluminium sheets to your specifications",
         features: ["Custom sizes", "Precision cut", "Various thickness", "Tailored solutions"]
     },
@@ -56,7 +56,7 @@ const products = [
         category: "sheet",
         price: 35.75,
         unit: "/sheet",
-        image: "images/hero-bg.jpg",
+        image: "hero-bg.jpg",
         description: "Decorative embossed aluminium sheets for architectural applications",
         features: ["Patterned surface", "Scratch resistant", "Easy cleaning", "Aesthetic finish"]
     }
@@ -90,7 +90,7 @@ function createProductCard(product) {
     
     col.innerHTML = `
         <div class="product-card" data-category="${product.category}">
-            <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.src='images/default-product.jpg'">
+            <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.src='default-product.jpg'">
             <h5>${product.name}</h5>
             <p>${product.description}</p>
             <div class="price">$${product.price} ${product.unit}</div>
@@ -457,4 +457,5 @@ function showNotification(message) {
 
 // Make functions available globally
 window.addToCart = addToCart;
+
 window.showCartModal = showCartModal;
