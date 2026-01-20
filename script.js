@@ -241,7 +241,7 @@ function showCartModal() {
             
             itemsHTML += `
                 <div class="cart-item">
-                    <img src="${item.image}" alt="${item.name}" onerror="this.src='images/default-product.jpg'">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='default-product.jpg'">
                     <div class="flex-grow-1">
                         <h6>${item.name}</h6>
                         <p class="text-muted">$${item.price} ${item.unit}</p>
@@ -457,5 +457,4 @@ function showNotification(message) {
 
 // Make functions available globally
 window.addToCart = addToCart;
-
 window.showCartModal = showCartModal;
